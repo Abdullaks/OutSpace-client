@@ -14,7 +14,7 @@ import styled from "@emotion/styled";
 import OTPInput from "otp-input-react";
 import OtpTimer from "otp-timer";
 import { useNavigate } from "react-router-dom";
-const baseUrl = "http://localhost:8800";
+const baseUrl = "https://real-pink-glasses.cyclic.app";
 const validate = (values) => {
   const errors = {};
 

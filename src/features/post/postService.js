@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "http://localhost:8800";
+const baseUrl = "https://real-pink-glasses.cyclic.app";
 
 //Get All posts
 const getAllposts = async (token) => {

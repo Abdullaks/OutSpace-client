@@ -7,8 +7,8 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import io from "socket.io-client";
 import { ChatState } from "../../context/chatProvider";
-const baseUrl = "http://localhost:8800";
-const ENDPOINT = "http://localhost:8800";
+const baseUrl = "https://real-pink-glasses.cyclic.app";
+const ENDPOINT = "https://real-pink-glasses.cyclic.app";
 var socket, selectedChatCompare;
 export default function Chat() {
   const { user } = useSelector((state) => state.auth);

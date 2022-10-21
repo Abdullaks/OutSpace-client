@@ -7,12 +7,14 @@ export default function Conversation({conversation,currentUser}) {
      const friendId = conversation.members.find((m) => m !== currentUser._id);
      const getUser = async () => {
        try {
-         const res = await axios.get("http://localhost:8800/api/user?userId=" + friendId,{
-        headers: {
-          Authorization: `Bearer ${currentUser.token}`,
-        }
-
-       } );
+         const res = await axios.get(
+           "https://real-pink-glasses.cyclic.app/api/user?userId=" + friendId,
+           {
+             headers: {
+               Authorization: `Bearer ${currentUser.token}`,
+             },
+           }
+         );
          setFriend(res.data);
        } catch (err) {
          console.log(err);

@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "http://localhost:8800";
+const baseUrl = "https://real-pink-glasses.cyclic.app";
 
 //Get profile
 const getProfile = async (username, token) => {
@@ -57,42 +57,6 @@ const unFollowUser = async (id, token) => {
   return response.data;
 };
 
-// export const f = async (id, token) => {
-//   try {
-//     const { data } = await axios.put(
-//       `${process.env.REACT_APP_BACKEND_URL}/follow/${id}`,
-//       {},
-
-//       {
-//         headers: {
-//           Authorization: `Bearer ${token}`,
-//         },
-//       }
-//     );
-//     console.log(data);
-//     return `ok`;
-//   } catch (error) {
-//     console.log(error.response.data.message);
-//     return error.response.data.message;
-//   }
-// };
-// export const unfollow = async (id, token) => {
-//   try {
-//     const { data } = await axios.put(
-//       `${process.env.REACT_APP_BACKEND_URL}/unfollow/${id}`,
-//       {},
-
-//       {
-//         headers: {
-//           Authorization: `Bearer ${token}`,
-//         },
-//       }
-//     );
-//     return `ok`;
-//   } catch (error) {
-//     return error.response.data.message;
-//   }
-// };
 
 
 const search = async (searchTerm, token) => {

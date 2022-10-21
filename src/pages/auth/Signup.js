@@ -11,7 +11,7 @@ import OTPInput from "otp-input-react";
 import OtpTimer from "otp-timer";
 import DotLoader from "react-spinners/DotLoader";
 import { register, reset } from "../../features/auth/authSlice";
-const baseUrl = "http://localhost:8800";
+const baseUrl = "https://real-pink-glasses.cyclic.app";
 const validate = (values) => {
   const errors = {};
   if (!values.username) {
