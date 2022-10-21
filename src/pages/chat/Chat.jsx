@@ -7,8 +7,8 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import io from "socket.io-client";
 import { ChatState } from "../../context/chatProvider";
-const baseUrl = "https://real-pink-glasses.cyclic.app";
 const ENDPOINT = "https://real-pink-glasses.cyclic.app";
+const baseUrl = "https://real-pink-glasses.cyclic.app";
 var socket, selectedChatCompare;
 export default function Chat() {
   const { user } = useSelector((state) => state.auth);
@@ -48,13 +48,13 @@ export default function Chat() {
         !selectedChatCompare ||
         selectedChatCompare._id !== newMessageRecieved.conversationId._id
       ) {
-        console.log("eifwi");
+        // console.log("eifwi");
         if (!notification.includes(newMessageRecieved)) {
           setNotification([newMessageRecieved, ...notification]);
           setFetchAgain(!fetchAgain);
         }
       } else {
-        console.log(newMessageRecieved);
+        // console.log(newMessageRecieved);
         setMessages([...messages, newMessageRecieved]);
       }
     });
