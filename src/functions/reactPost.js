@@ -34,6 +34,6 @@ export const getReacts = async (postId, token) => {
     );
     return data;
   } catch (error) {
-    return error.response.data.message;
+    return error?.response.data?.message;
   }
 };

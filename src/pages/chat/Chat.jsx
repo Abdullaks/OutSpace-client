@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import io from "socket.io-client";
 import { ChatState } from "../../context/chatProvider";
-const ENDPOINT = "https://real-pink-glasses.cyclic.app";
+// const ENDPOINT = "https://real-pink-glasses.cyclic.app";
 const baseUrl = "https://real-pink-glasses.cyclic.app";
 var socket, selectedChatCompare;
 export default function Chat() {
@@ -21,7 +21,7 @@ export default function Chat() {
   const scrollRef = useRef();
   const { notification, setNotification } = ChatState();
   useEffect(() => {
-    socket = io(ENDPOINT);
+    socket = io(baseUrl);
     socket.emit("setup", user);
     socket.on("connected", () => setSocketConnected(true));
   }, []);
