@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Chat.css";
+import axios from "axios";
+import io from "socket.io-client";
 import Header from "../../components/header";
 import Conversation from "../../components/chat/conversation/Conversation";
 import Message from "../../components/chat/message/Message";
 import { useSelector } from "react-redux";
-import axios from "axios";
-import io from "socket.io-client";
 import { ChatState } from "../../context/chatProvider";
 // const ENDPOINT = "https://real-pink-glasses.cyclic.app";
 const baseUrl = "https://real-pink-glasses.cyclic.app";
@@ -64,7 +64,7 @@ export default function Chat() {
       try {
         const conversationId = currentChat?._id;
         const res = await axios.get(
-          `${baseUrl}/api/chat/allMessage/` + conversationId,
+          `${baseUrl}/api/chat/allMessage/${conversationId}`  ,
           {
             headers: {
               Authorization: `Bearer ${user.token}`,

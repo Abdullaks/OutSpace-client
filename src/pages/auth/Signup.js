@@ -215,7 +215,7 @@ export default function Signup() {
                   </button>
                 </form>
 
-                <DotLoader color="#1876f2" loading={loading} size={30} />
+               {loading&& <DotLoader color="#1876f2" loading={loading} size={30} />}
 
                 <div className="sign_splitter"></div>
 

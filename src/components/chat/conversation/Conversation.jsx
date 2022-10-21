@@ -15,7 +15,7 @@ export default function Conversation({conversation,currentUser}) {
              },
            }
          );
-         setFriend(res.data);
+         setFriend(res?.data);
        } catch (err) {
          console.log(err);
        }

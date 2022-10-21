@@ -109,7 +109,8 @@ const Login = () => {
                 <Link to="/verifyMobile" className="forgot_password">
                   Forgotten password?
                 </Link>
-                <DotLoader color="#1876f2" loading={loading} size={30} />
+
+               {loading&& <DotLoader color="#1876f2" loading={loading} size={30} />}
                 <div className="sign_splitter"></div>
                 <Link to="/signup">
                   <span
