@@ -14,7 +14,7 @@ import styled from "@emotion/styled";
 import OTPInput from "otp-input-react";
 import OtpTimer from "otp-timer";
 import { useNavigate } from "react-router-dom";
-const baseUrl = "https://real-pink-glasses.cyclic.app";
+const baseUrl = "http://localhost:8800";
 const validate = (values) => {
   const errors = {};
 
@@ -73,14 +73,11 @@ function VerifyMobile() {
           otp: OTP,
         }
       );
-      console.log(inOtpData);
       if (inOtpData.data == "otpConfirmed") {
         navigate("/forgetPassword");
       } else {
-        console.log("otp not Correct");
       }
     } else {
-      console.log(" OTP is Not 4 digit");
     }
   };
   return (

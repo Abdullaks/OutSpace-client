@@ -12,7 +12,6 @@ export default function ImagePreview({
   const imageInputRef = useRef(null);
   const handleImages = (e) => {
     let files = Array.from(e.target.files);
-    console.log(files);
     files.forEach((img) => {
       const reader = new FileReader();
       reader.readAsDataURL(img);
@@ -41,9 +40,9 @@ export default function ImagePreview({
               </button>
               <button
                 className="hover1"
-                 onClick={() => {
-                   imageInputRef.current.click();
-                 }}
+                onClick={() => {
+                  imageInputRef.current.click();
+                }}
               >
                 <i className="addPhoto_icon"></i>
                 Add Photos/Videos
@@ -51,9 +50,9 @@ export default function ImagePreview({
             </div>
             <div
               className="small_white_circle"
-               onClick={() => {
-                 setImages([]);
-               }}
+              onClick={() => {
+                setImages([]);
+              }}
             >
               <i className="exit_icon"></i>
             </div>
@@ -73,7 +72,7 @@ export default function ImagePreview({
                   ? "preview6"
                   : "preview6 singular_grid"
               }
-            > 
+            >
               {images.map((img, i) => (
                 <img src={img} key={i} alt="" />
               ))}
@@ -81,8 +80,12 @@ export default function ImagePreview({
           </div>
         ) : (
           <div className="add_pics_inside1">
-            <div className="small_white_circle"
-            onClick={()=>{setShowPrev(false)}}>
+            <div
+              className="small_white_circle"
+              onClick={() => {
+                setShowPrev(false);
+              }}
+            >
               <i className="exit_icon"></i>
             </div>
             <div

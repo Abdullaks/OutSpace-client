@@ -39,7 +39,7 @@ export default function CreateComment({ postId }) {
       setText("");
     }
   };
-  
+
   return (
     <div className="create_comment_wrap">
       <div className="create_comment">

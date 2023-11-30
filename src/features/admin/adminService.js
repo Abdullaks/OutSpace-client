@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "https://real-pink-glasses.cyclic.app";
+const baseUrl = "http://localhost:8800";
 //Get user
 const getAllUsers = async (token) => {
   const config = {
@@ -10,7 +10,7 @@ const getAllUsers = async (token) => {
   const response = await axios.get(`${baseUrl}/api/admin/`, config);
   return response.data;
 };
-   
+
 //Delete user
 const deleteUser = async (userId, token) => {
   const config = {
@@ -26,17 +26,20 @@ const deleteUser = async (userId, token) => {
 };
 //Block user
 const blockUser = async (userId, token) => {
-    const config = {
+  const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.put(`${baseUrl}/api/admin/blockUser/` + userId, config);
+  const response = await axios.put(
+    `${baseUrl}/api/admin/blockUser/` + userId,
+    config
+  );
   return response.data;
 };
 //Unblock user
 const unBlockUser = async (userId, token) => {
-  const config = { 
+  const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -47,7 +50,6 @@ const unBlockUser = async (userId, token) => {
   );
   return response.data;
 };
-
 
 const adminService = {
   getAllUsers,

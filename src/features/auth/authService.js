@@ -1,12 +1,10 @@
 import axios from "axios";
 
-const baseUrl = "https://real-pink-glasses.cyclic.app";
+const baseUrl = "http://localhost:8800";
 
 //REGISTER USER
 const register = async (userData) => {
-      console.log("sliceservice reg");
   const response = await axios.post(`${baseUrl}/api/auth/register`, userData);
-  console.log(response.data);
   if (response.data) {
     localStorage.setItem("user", JSON.stringify(response.data));
   }

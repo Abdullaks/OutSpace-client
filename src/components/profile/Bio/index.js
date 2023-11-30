@@ -17,13 +17,13 @@ export default function Bio({ visitor, profile }) {
   const dispatch = useDispatch();
   useEffect(() => {
     setInfos(profile?.bio);
-  }, [profile,dispatch]);
+  }, [profile, dispatch]);
   const updateDetails = async () => {
-    dispatch(updateBio( infos ));
-    dispatch(getProfile(user.username))
-    setShowBioInput(false);  
+    dispatch(updateBio(infos));
+    dispatch(getProfile(user.username));
+    setShowBioInput(false);
   };
-  const handleChange = (e) => { 
+  const handleChange = (e) => {
     setInfos({ ...infos, bio: e.target.value });
   };
   return (
@@ -43,7 +43,7 @@ export default function Bio({ visitor, profile }) {
       {profile?.bio && !showBioInput && (
         <div className="info_col">
           {/* <p className="info_text">{profile?.bio}</p> */}
-          <p className="info_text">{profile?.name?profile.name:""}</p>
+          <p className="info_text">{profile?.name ? profile.name : ""}</p>
           <span className="info_text">{profile?.bio}</span>
         </div>
       )}
@@ -53,9 +53,8 @@ export default function Bio({ visitor, profile }) {
           <div className="add_bio_wrap">
             <textarea
               placeholder="Add Bio...."
-              value={infos.bio?infos.bio:profile?.bio}
+              value={infos.bio ? infos.bio : profile?.bio}
               maxLength="100"
-              
               className="textarea_blue details_input"
               onChange={handleChange}
             ></textarea>
@@ -101,8 +100,6 @@ export default function Bio({ visitor, profile }) {
         setVisible={setVisible}
       />
     )} */}
-
-      
     </div>
   );
 }

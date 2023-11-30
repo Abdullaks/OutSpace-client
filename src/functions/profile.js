@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "https://real-pink-glasses.cyclic.app";
+const baseUrl = "http://localhost:8800";
 
 export const updateprofilePicture = async (url, token) => {
   try {

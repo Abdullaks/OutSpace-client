@@ -34,7 +34,6 @@ export const updateBio = createAsyncThunk(
   "user/updateBio",
   async (infos, thunkAPI) => {
     try {
-      console.log(infos, "slice called");
       const token = thunkAPI.getState().auth.user.token;
       return await profileService.updateBio(infos, token);
     } catch (error) {
@@ -71,7 +70,6 @@ export const unFollowUser = createAsyncThunk(
   "user/unfollow",
   async (id, thunkAPI) => {
     try {
-      console.log(id, "slice called");
       const token = thunkAPI.getState().auth.user.token;
       return await profileService.unFollowUser(id, token);
     } catch (error) {

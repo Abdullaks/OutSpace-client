@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "https://real-pink-glasses.cyclic.app";
+const baseUrl = "http://localhost:8800";
 
 //Get All posts
 const getAllposts = async (token) => {
@@ -46,7 +46,6 @@ const deletePost = async (postId, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  console.log("service ",config);
   const response = await axios.delete(`${baseUrl}/api/post/deletePost/` + postId, config);
   return response.data;                
 };
@@ -57,9 +56,7 @@ const deletePost = async (postId, token) => {
 //       Authorization: `Bearer ${token}`,
 //     },
 //   };
-//   console.log("service ",config);
 //   const response = await axios.put("/api/post/editPost/" + postId,data, config);
-//   console.log("response ",response);
 //   return response.data;
 // };
 

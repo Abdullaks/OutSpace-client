@@ -26,16 +26,16 @@ export default function SavedPosts({ post, profile, comments }) {
   const showMore = () => {
     setCount((prev) => prev + 5);
   };
-useEffect(() => {
-  getPostReacts();
-}, [post]); 
+  useEffect(() => {
+    getPostReacts();
+  }, [post]);
 
-const getPostReacts = async () => {
-  const res = await getReacts(post._id, user.token);
-  setReacts(res.reacts);
-  setCheck(res.check);
-  setTotal(res.total);
-};
+  const getPostReacts = async () => {
+    const res = await getReacts(post._id, user.token);
+    setReacts(res.reacts);
+    setCheck(res.check);
+    setTotal(res.total);
+  };
   const reactHandler = async (type) => {
     reactPost(post._id, "like", user?.token);
     if (check == "like") {
@@ -52,7 +52,7 @@ const getPostReacts = async () => {
       if (index !== -1) {
         setReacts([...reacts, (reacts[index].count = ++reacts[index].count)]);
         setTotal((prev) => ++prev);
-      } 
+      }
       if (index1 !== -1) {
         setReacts([...reacts, (reacts[index1].count = --reacts[index1].count)]);
         setTotal((prev) => --prev);

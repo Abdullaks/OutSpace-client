@@ -23,7 +23,7 @@ import { ChatState } from "../../context/chatProvider";
 
 export default function Header({ page }) {
   const { user } = useSelector((state) => state.auth);
-const { notification, setNotification } = ChatState();
+  const { notification, setNotification } = ChatState();
   const [showSearchMenu, setShowSearchMenu] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const color = "#65676b";

@@ -92,7 +92,6 @@ export const deletePost = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token;
-      console.log("slice called",id);
       return await postService.deletePost(id, token);
     } catch (error) {
       const message =
