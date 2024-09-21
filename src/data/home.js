@@ -1,6 +1,6 @@
 export const left = [
   {
-     text: "Followers",
+    text: "Followers",
     img: "friends",
   },
   {
@@ -15,5 +15,5 @@ export const left = [
   {
     text: "Pages",
     img: "pages",
-  }, 
+  },
 ];

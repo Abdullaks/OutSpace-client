@@ -70,7 +70,6 @@ export const blockUser = createAsyncThunk(
 export const unBlockUser = createAsyncThunk(
   "admin/unBlockUser",
   async (id, thunkAPI) => {
-    console.log(id, "unBlockUser called  with slice");
     try {
       const token = thunkAPI.getState().auth.admin.token;
       return await adminService.unBlockUser(id, token);

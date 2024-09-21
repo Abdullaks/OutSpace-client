@@ -1,7 +1,5 @@
-import React from 'react'
-import './style.css'
+import React from "react";
+import "./style.css";
 export default function Stories() {
-  return (
-    <div>Stories</div>
-  )
+  return <div>Stories</div>;
 }

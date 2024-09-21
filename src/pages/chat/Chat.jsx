@@ -7,8 +7,7 @@ import Conversation from "../../components/chat/conversation/Conversation";
 import Message from "../../components/chat/message/Message";
 import { useSelector } from "react-redux";
 import { ChatState } from "../../context/chatProvider";
-// const ENDPOINT = "https://real-pink-glasses.cyclic.app";
-const baseUrl = "https://real-pink-glasses.cyclic.app";
+const baseUrl = "http://localhost:8800";
 var socket, selectedChatCompare;
 export default function Chat() {
   const { user } = useSelector((state) => state.auth);
@@ -39,7 +38,6 @@ export default function Chat() {
       });
       setConversations(res.data);
     } catch (err) {
-      console.log(err);
     }
   };
   useEffect(() => {
@@ -48,13 +46,11 @@ export default function Chat() {
         !selectedChatCompare ||
         selectedChatCompare._id !== newMessageRecieved.conversationId._id
       ) {
-        // console.log("eifwi");
         if (!notification.includes(newMessageRecieved)) {
           setNotification([newMessageRecieved, ...notification]);
           setFetchAgain(!fetchAgain);
         }
       } else {
-        // console.log(newMessageRecieved);
         setMessages([...messages, newMessageRecieved]);
       }
     });
@@ -75,7 +71,6 @@ export default function Chat() {
 
         socket.emit("join chat", currentChat._id);
       } catch (err) {
-        console.log(err);
       }
     };
     getMessages();
@@ -101,7 +96,6 @@ export default function Chat() {
       socket.emit("new message", res.data);
       setNewMessage("");
     } catch (err) {
-      console.log(err);
     }
   };
   useEffect(() => {

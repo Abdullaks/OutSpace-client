@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 export default function ImagePreview({ user, text, setText, image, setImage }) {
   return (
     <div className="overflow_a">
@@ -17,7 +17,7 @@ export default function ImagePreview({ user, text, setText, image, setImage }) {
               <img src={image} alt="" />
             </div>
           </div>
-        ) }
+        )}
       </div>
     </div>
   );

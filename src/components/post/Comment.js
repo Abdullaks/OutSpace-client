@@ -14,9 +14,7 @@ export default function Comment({ comment }) {
           <div className="comment_text">{comment?.commentText}</div>
         </div>
         <div className="comment_actions">
-          <span>
-            {format(comment?.createdAt)}
-          </span>
+          <span>{format(comment?.createdAt)}</span>
         </div>
       </div>
     </div>

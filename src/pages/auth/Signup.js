@@ -11,7 +11,7 @@ import OTPInput from "otp-input-react";
 import OtpTimer from "otp-timer";
 import DotLoader from "react-spinners/DotLoader";
 import { register, reset } from "../../features/auth/authSlice";
-const baseUrl = "https://real-pink-glasses.cyclic.app";
+const baseUrl = "http://localhost:8800";
 const validate = (values) => {
   const errors = {};
   if (!values.username) {
@@ -101,10 +101,8 @@ export default function Signup() {
       if (inOtpData.data == "otpConfirmed") {
         dispatch(register(userData));
       } else {
-        console.log("otp not confirmed");
       }
     } else {
-      console.log(" OTP is Not 4 digit");
     }
   };
   const { user, isError, isAdmin, isSuccess, message } = useSelector(

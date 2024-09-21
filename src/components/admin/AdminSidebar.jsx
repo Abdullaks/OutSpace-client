@@ -7,12 +7,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import React from "react";
-import {
-  Home,
-  Pages,
-  Settings,
-  Shop,
-} from "@mui/icons-material";
+import { Home, Pages, Settings, Shop } from "@mui/icons-material";
 function AdminSidebar() {
   return (
     <Box

@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { search } from "../../functions/search";
 
-export default function SearchMenu({ color, setShowSearchMenu ,token}) {
+export default function SearchMenu({ color, setShowSearchMenu, token }) {
   const [iconVisible, setIconVisible] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
@@ -23,8 +23,7 @@ export default function SearchMenu({ color, setShowSearchMenu ,token}) {
     if (searchTerm === "") {
       setResults("");
     } else {
-      const res= await search(searchTerm, token);
-      console.log(res);
+      const res = await search(searchTerm, token);
       // dispatch(search(searchTerm));
       setResults(res);
     }

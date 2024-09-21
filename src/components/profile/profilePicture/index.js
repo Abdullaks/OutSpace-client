@@ -13,8 +13,8 @@ export default function ProfilePicture({ setProfilePopup }) {
   const [image, setImage] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { user } = useSelector( (state) => state.auth);
-  const dispatch= useDispatch()
+  const { user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
   const handleImage = (e) => {
     let file = e.target.files[0];
     if (
@@ -38,7 +38,7 @@ export default function ProfilePicture({ setProfilePopup }) {
   const updateProfielPicture = async () => {
     try {
       setLoading(true);
-      let img = image
+      let img = image;
       let blob = await fetch(img).then((b) => b.blob());
       const path = `${user.username}/profile_pictures`;
       let formData = new FormData();
@@ -64,7 +64,7 @@ export default function ProfilePicture({ setProfilePopup }) {
           setLoading(false);
           setImage("");
           setProfilePopup(false);
-          dispatch(getProfile(user.username))
+          dispatch(getProfile(user.username));
         } else {
           setLoading(false);
           setError(new_post);
@@ -137,12 +137,14 @@ export default function ProfilePicture({ setProfilePopup }) {
         </div>
         {image && (
           <div className="update_submit_wrap">
-            <div className="blue_link"
-            onClick={()=>setImage("")}
-            >Cancel</div>
-            <button className="blue_btn"
-             disabled={loading}
-             onClick={() => updateProfielPicture()}>
+            <div className="blue_link" onClick={() => setImage("")}>
+              Cancel
+            </div>
+            <button
+              className="blue_btn"
+              disabled={loading}
+              onClick={() => updateProfielPicture()}
+            >
               {loading ? <PulseLoader color="#fff" size={5} /> : "Save"}
             </button>
           </div>

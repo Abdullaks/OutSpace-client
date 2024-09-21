@@ -7,27 +7,23 @@
 //   const [text, setText] = useState("");
 //   const { id } = useParams();
 // const {user} =useSelector((state) => state.auth);
-//   const dispatch = useDispatch(); 
+//   const dispatch = useDispatch();
 //   const navigate = useNavigate();
 //   useEffect(() => {
 //     getsinglePost()
 //   }, [id]);
-
 
 // const getsinglePost= async (req, res) => {
 // const ePost =await getAPost(id,user.token);
 //  setText(ePost);
 // }
 
-
 //   const onSubmit = async () => {
 //         const response = await editPost( null, null, text,null,user._id,user.token,id);
-//     console.log(response);
 //     if (response === "ok") {
 //       setText("");
 //       navigate("/home");
 //     } else {
-//       console.log(response, "error");
 //     }
 //   };
 //   return (
@@ -38,7 +34,7 @@
 //       <section className="form">
 //           <div className="form-group">
 //             <input
-//               type="text" 
+//               type="text"
 //               className="form-control"
 //               id="text"
 //               name="text"

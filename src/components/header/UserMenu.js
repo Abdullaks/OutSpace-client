@@ -17,28 +17,19 @@ export default function UserMenu({ user }) {
           <Link to="/profile" className="mmenu_header hover3">
             <img src={user?.profilePicture} alt="" />
             <div className="mmenu_col">
-              <span>
-                {user?.username} 
-              </span>
+              <span>{user?.username}</span>
               <span>See your profile</span>
             </div>
           </Link>
-         
+
           <div className="mmenu_splitter"></div>
-          <div
-            className="mmenu_item hover3"
-            
-          >
+          <div className="mmenu_item hover3">
             <div className="small_circle">
               <i className="dark_filled_icon"></i>
             </div>
             <span>Display & Accessibility</span>
-            
           </div>
-          <div
-            className="mmenu_item hover3"
-            onClick={onLogout}
-          >
+          <div className="mmenu_item hover3" onClick={onLogout}>
             <div className="small_circle">
               <i className="logout_filled_icon"></i>
             </div>
@@ -46,7 +37,6 @@ export default function UserMenu({ user }) {
           </div>
         </div>
       )}
-      
     </div>
   );
 }
