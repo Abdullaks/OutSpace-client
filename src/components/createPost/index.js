@@ -28,7 +28,12 @@ export default function CreatePost({ user, setPostPopup }) {
           <LiveVideo color="#f3425f" />
           Live Video
         </div>
-        <div className="createPost_icon hover1">
+        <div
+          className="createPost_icon hover1"
+          onClick={() => {
+            setPostPopup(true);
+          }}
+        >
           <Photo color="#4bbf67" />
           Photo/Video
         </div>
